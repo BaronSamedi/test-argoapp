@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/sync-wave: "1"
   name: nginx
   namespace: testargomanu
   labels:
@@ -33,5 +33,9 @@ spec:
     targetPort: http-web-svc
 
 ---
-
+ignoreDifferences:
+  - group:
+    kind: Pod
+    jsonPointers:
+      - /metadata/annotations
 ---
