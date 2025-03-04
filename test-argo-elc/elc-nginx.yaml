@@ -32,10 +32,3 @@ spec:
     port: 80
     targetPort: http-web-svc
 
----
-ignoreDifferences:
-  - group:
-    kind: Pod
-    jsonPointers:
-      - /metadata/annotations
----
